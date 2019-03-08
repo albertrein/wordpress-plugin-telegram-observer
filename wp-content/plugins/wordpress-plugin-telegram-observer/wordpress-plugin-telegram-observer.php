@@ -3,7 +3,7 @@
 		Plugin Name: Telegram Observer
 		Description: Observer wordpress actions with telegram.
 		author: albertrein
-		version: 0.0.5
+		version: 0.0.6
 	*/
 
 	// define('plugin-path',plugin_dir_path(__FILE__));	
@@ -19,7 +19,12 @@
 
 	if(!get_option('telegram-observer-chatID') && !get_option('telegram-observer-botToken')){
 		//No data information telegram was saved
-		exit('No data information telegram was saved');
+		return 0;
+	}
+
+	if(!$arrayActions){
+		//No data actions was saved yet!
+		return 0;
 	}
 
 	foreach ($arrayActions as $key => $value) {

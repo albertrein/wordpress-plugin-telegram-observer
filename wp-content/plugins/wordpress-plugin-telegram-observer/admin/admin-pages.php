@@ -75,7 +75,7 @@
 
 	function saveInformationAccessTelegramAPI($chatId, $botToken){
 		update_option('telegram-observer-chatID', $chatId);
-		update_optin('telegram-observer-botToken', $botToken);
+		update_option('telegram-observer-botToken', $botToken);
 
 		return true;
 	}
